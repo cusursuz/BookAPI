@@ -200,10 +200,6 @@ class BookController extends AbstractFOSRestController
                 'message' => 'Unknown data format',
             ], JsonResponse::HTTP_BAD_REQUEST);
         }
-
-        $books = $this->bookRepository->findBy([], [], 1000);
-        return $this->view($books, Response::HTTP_OK);
-        return $this->json($books);
     }
 
     #[Rest\Get('/api/books/get/catalog', name: 'get_books_catalog')]
